@@ -2,7 +2,7 @@
   "name": "sintaks-dev-copilot-provider",
   "displayName": "sintaks.dev",
   "description": "Use sintaks.dev AI gateway models in GitHub Copilot Chat — 300+ OpenAI-compatible models billed per-request in IDR, no credit card needed.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "publisher": "sintaks-dev",
   "license": "MIT",
   "repository": {
@@ -67,7 +67,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.15.0",
-    "@types/vscode": "^1.104.0",
+    "@types/vscode": "^1.146.0",
     "@vscode/vsce": "^4.1.0",
     "esbuild": "^0.25.0",
     "typescript": "^5.9.0"
