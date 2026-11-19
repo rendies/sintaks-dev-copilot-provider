@@ -5,6 +5,10 @@
   "version": "0.1.0",
   "publisher": "sintaks-dev",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rendies/sintaks-dev-copilot-provider.git"
+  },
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.104.0"
@@ -54,7 +58,7 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "pnpm run package",
+    "vscode:prepublish": "npm run package",
     "compile": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --sourcemap",
     "watch": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --sourcemap --watch",
     "package": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --minify",
@@ -64,7 +68,7 @@
   "devDependencies": {
     "@types/node": "^22.15.0",
     "@types/vscode": "^1.104.0",
-    "@vscode/vsce": "^3.6.0",
+    "@vscode/vsce": "^4.1.0",
     "esbuild": "^0.25.0",
     "typescript": "^5.9.0"
   }

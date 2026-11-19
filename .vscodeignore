@@ -8,3 +8,4 @@ esbuild.config.*
 *.map
 *.vsix
 pnpm-lock.yaml
+.github/**
