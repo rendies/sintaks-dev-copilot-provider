@@ -1,0 +1,71 @@
+{
+  "name": "sintaks-dev-copilot-provider",
+  "displayName": "sintaks.dev",
+  "description": "Use sintaks.dev AI gateway models in GitHub Copilot Chat — 300+ OpenAI-compatible models billed per-request in IDR, no credit card needed.",
+  "version": "0.1.0",
+  "publisher": "sintaks-dev",
+  "license": "MIT",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "categories": [
+    "AI",
+    "Chat",
+    "Machine Learning"
+  ],
+  "keywords": [
+    "copilot",
+    "ai",
+    "chat",
+    "sintaks",
+    "openai",
+    "model provider",
+    "ai gateway"
+  ],
+  "activationEvents": [
+    "onLanguageModelChatProvider:sintaks"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "languageModelChatProviders": [
+      {
+        "vendor": "sintaks",
+        "displayName": "sintaks.dev",
+        "managementCommand": "sintaks.manage"
+      }
+    ],
+    "commands": [
+      {
+        "command": "sintaks.manage",
+        "title": "sintaks.dev: Manage Provider",
+        "category": "sintaks.dev"
+      }
+    ],
+    "configuration": {
+      "title": "sintaks.dev",
+      "properties": {
+        "sintaks.baseUrl": {
+          "type": "string",
+          "default": "https://api.sintaks.dev/v1",
+          "description": "Base URL of the sintaks.dev gateway (OpenAI-compatible /v1 root)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --sourcemap",
+    "watch": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --sourcemap --watch",
+    "package": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node --minify",
+    "typecheck": "tsc --noEmit",
+    "vsce": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/vscode": "^1.104.0",
+    "@vscode/vsce": "^3.6.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.9.0"
+  }
+}
